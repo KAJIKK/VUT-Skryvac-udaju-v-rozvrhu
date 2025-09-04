@@ -4,8 +4,10 @@
 @version        1.0.0
 @description    V nastavení lze vybrat co se skryje a co ne, to se hodí na malém monitoru při registraci vyučování
 @author         KAJIK
-@license     	unlicense
+@license     	GPL-3.0-or-later
 @preprocessor 	stylus
+@homepageURL 	https://github.com/KAJIKK/VUT-Skryvac-udaju-v-rozvrhu
+@supportURL		https://github.com/KAJIKK/VUT-Skryvac-udaju-v-rozvrhu/issues
 
 @var          	checkbox	mezery		"Mezery"  	0
 @var          	checkbox	kapacita	"Kapacita"  1
