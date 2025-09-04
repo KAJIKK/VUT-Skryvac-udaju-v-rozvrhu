@@ -1,0 +1,92 @@
+/* ==UserStyle==
+@name           VUT Skrývač údajů v rozvrhu
+@namespace      vut_skryvac
+@version        1.0.0
+@description    V nastavení lze vybrat co se skryje a co ne, to se hodí na malém monitoru při registraci vyučování
+@author         KAJIK
+@license     	unlicense
+@preprocessor 	stylus
+
+@var          	checkbox	mezery		"Mezery"  	0
+@var          	checkbox	kapacita	"Kapacita"  1
+@var          	checkbox	ucitel		"Vyučující"	1
+@var          	checkbox	cas			"Čas"  		1
+@var          	checkbox	mistnost	"Místnost"  1
+@var          	checkbox	ikony		"Ikony"  	1
+@var          	checkbox	pratele		"Přátelé"  	1
+
+
+==/UserStyle== */
+@-moz-document url-prefix("https://www.vut.cz/studis/student.phtml?sn=registrace_vyucovani"), url-prefix("https://www.vut.cz/studis/student.phtml?sn=osobni_rozvrh") {
+	if not mezery {
+		.blok-vn {
+			display: inline-block;
+			flex-direction: column;
+			position: relative;
+			border: 1px solid #9F9F9F;
+			border-radius: 2px;
+			margin: 0 0px;
+			padding: 0px;
+			overflow: hidden;
+			line-height: 1.4;
+			height: 100%;
+			text-align: center;
+		}
+		.radek {
+			position: relative;
+			display: flex;
+			width: 100%;
+			margin: 1px 0px;
+		}
+	}
+	
+	if not ikony {
+		.blok-registrace {
+			display: none;
+		}
+	}
+	
+	if not kapacita {
+		.blok-kapacita {
+			display: none
+		}
+	}
+	
+	if not mistnost {
+		.blok-mistnost {
+			display: none;
+		}
+	}
+	
+	if not ucitel {
+		.vypis-blok-osoba {
+			display: none;
+		}
+	}
+	
+	if not cas {
+		.blok-cas {
+			display: none;
+		}
+	}
+}
+@-moz-document url-prefix("https://www.vut.cz/studis/student.phtml?sn=volba_vyucovani_seznam") {
+	if pratele {
+		a[href="/lide/skalicky-josef-270692"],
+		a[href="/lide/steidl-frantisek-270714"],
+		a[href="/lide/stech-michal-270713"],
+		a[href="/lide/vlcek-lukas-270742"],
+		a[href="/lide/kralicek-tomas-270628"],
+		a[href="/lide/novak-michal-270659"],
+		a[href="/lide/sovis-lukas-270697"],
+		a[href="/lide/michalek-jaroslav-230287"],
+		a[href="/lide/suchy-radovan-270703"],
+		a[href="/lide/sajben-adrian-270705"] {
+			color: red;
+		}
+		a[href="/lide/toth-karel-270726"] {
+			background: #7dff48;
+			color: black
+		}
+	}
+}
